@@ -1,7 +1,11 @@
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
+#![feature(proc_macro)]
+#![recursion_limit="500"]
+
+#[macro_use]
+extern crate stdweb;
+use stdweb::js_export;
+
+#[js_export]
+pub fn start() {
+    console!(log, "hello from rust!");
 }

@@ -4,3 +4,7 @@ version = "0.1.0"
 authors = ["Matthijs van Otterdijk <matthijs@wirevirt.net>"]
 
 [dependencies]
+stdweb = "*"
+
+[lib]
+crate-type = ["cdylib"]
