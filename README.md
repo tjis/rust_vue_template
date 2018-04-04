@@ -54,7 +54,7 @@ One of the loaders configured (in [webpack.config.js](webpack.config.js)) is [ru
 Other loaders are related to transpiling modern javascript dialects to plain old browser js, and to vue.
 
 ### yarn
-yarn parses the [package.json](package.json) file, and downloads and installs the packages listed there, as well as their dependencies. This allows them to be found by Webpack, which in turn allows javascript files to import them. This is how we get Vue.js, among other things.
+[yarn](https://yarnpkg.com/en/) parses the [package.json](package.json) file, and downloads and installs the packages listed there, as well as their dependencies. This allows them to be found by Webpack, which in turn allows javascript files to import them. This is how we get Vue.js, among other things.
 
 package.json also defines two 'scripts', `dev` and `build`. these define what happens when you do `yarn run dev` or `yarn run build` (or `npm run dev` or `npm run build`). In this case, starting a development server, or running a production build.
 
