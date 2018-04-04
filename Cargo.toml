@@ -1,0 +1,6 @@
+[package]
+name = "rust_vue_template"
+version = "0.1.0"
+authors = ["Matthijs van Otterdijk <matthijs@wirevirt.net>"]
+
+[dependencies]
