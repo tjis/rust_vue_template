@@ -56,6 +56,8 @@ Other loaders are related to transpiling modern javascript dialects to plain old
 ### yarn
 yarn parses the [package.json](package.json) file, and downloads and installs the packages listed there, as well as their dependencies. This allows them to be found by Webpack, which in turn allows javascript files to import them. This is how we get Vue.js, among other things.
 
+package.json also defines two 'scripts', `dev` and `build`. these define what happens when you do `yarn run dev` or `yarn run build` (or `npm run dev` or `npm run build`). In this case, starting a development server, or running a production build.
+
 ### Vue.js
 [Vue.js](https://vuejs.org/) is a framework for building user interfaces. Vue allows for straightforward conversion of a javascript object (the viewmodel) to DOM elements using a declarative HTML templating approach.
 
