@@ -73,6 +73,8 @@ WebAssembly is still in a pretty early stage of development though, and what bro
 
 Specifically, cargo-web provides the plumbing required to call from rust into javascript. This is used by the stdweb library to provide a `js!` macro, which allows us to embed javascript directly in our rust code. I am not quite sure what voodoo was required to make this work, but it is pretty neat!
 
+cargo-web is configured through the [Web.toml](Web.toml) file. The only thing configured there in this template is that we always wish to build with rust's native wasm backend (rather than using emscripten or asm.js).
+
 ### putting it all together
 [main.js](src/main.js) imports vue, the application template and the rust webassembly. Since main.js is the webpack entry, webpack will ensure these dependencies are loaded into the final bundle and available at runtime. This also triggers the cargo web build of the webassembly, since lib.rs is imported.
 
