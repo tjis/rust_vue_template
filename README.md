@@ -44,7 +44,7 @@ If you suspect something is wrong, you can run
 to launch a build just for the rust WebAssembly part. It'll actually display sensible errors.
 
 ## Explanation
-I'll briefly go over all the relevant bits here.
+I'll briefly go over all the relevant bits here. As I'm rather new to the frontend, there's a good chance some of this is wrong. Corrections are welcome.
 
 ### Webpack
 [Webpack](https://webpack.js.org/) is our build system. It recursively finds all dependencies starting from a configured entry point (src/main.js in our case), then loads them using whatever mechanism configured. It is very flexible, but the flexibility comes with some extra complexity.
@@ -83,3 +83,6 @@ Next in main.js, the rust webassembly is compiled to native instructions, and wh
 The lib.rs `start` function is quite simple. It just logs a few messages and constructs the Vue instance in the same way one would do this in javascript.
 
 With this setup, it should be possible to construct the entire application in rust, optionally making use of js dependencies which are injected through main.js. The setup itself isn't really vue specific; any framework that works with webpack can be substituted.
+
+### misc. stuff
+in [Cargo.toml](Cargo.toml), the crate is configured as a library crate. Also, the crate-type "cdylib" is configured. This is required for rust to actually produce a wasm file. A normal library type won't work.
