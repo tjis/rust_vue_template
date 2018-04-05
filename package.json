@@ -2,7 +2,7 @@
     "name": "rust_vue_template",
     "description": "A starter template for vue projects in rust",
     "version": "1.0.0",
-    "author": "Matthijs van Otterdijk <matthijs@wirevirt.net>",
+    "author": "Random Rustacean <random@rustacean.example>",
     "license": "Apache/MIT",
     "private": true,
     "scripts": {
