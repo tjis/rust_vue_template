@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/logo.png" v-on:click="onClick">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -21,12 +21,20 @@
 
 <script>
 export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+    name: 'app',
+    data () {
+        return {
+            msg: ''
+        };
+    },
+    created () {
+        this.$rust.register(this.$data);
+    },
+    methods: {
+        onClick: function (event) {
+            this.$rust.on_press(this.$data, event);
+        }
     }
-  }
 }
 </script>
 

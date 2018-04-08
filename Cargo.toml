@@ -5,6 +5,8 @@ authors = ["Random Rustacean <random@rustacean.example>"]
 
 [dependencies]
 stdweb = "*"
+serde = "*"
+serde_derive = "*"
 
 [lib]
 crate-type = ["cdylib"]

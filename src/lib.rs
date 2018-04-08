@@ -3,20 +3,19 @@
 
 #[macro_use]
 extern crate stdweb;
+
+mod vue;
 use stdweb::js_export;
+use vue::VueModel;
 
 #[js_export]
-pub fn start(vue: stdweb::Value, app: stdweb::Value) {
-    console!(log, "starting..");
+pub fn register(model: VueModel) {
+    model.set("msg", "Hello from rust!");
+}
 
-    js! {
-        let Vue = @{vue};
-        let App = @{app};
-        new Vue({
-            el: "#app",
-            render: h => h(App)
-        });
-    }
-
-    console!(log, "started!");
+#[js_export]
+pub fn on_press(model: VueModel, event: stdweb::Value) {
+    let mut new_msg : String = model.get("msg");
+    new_msg.push('!');
+    model.set("msg", &new_msg);
 }
